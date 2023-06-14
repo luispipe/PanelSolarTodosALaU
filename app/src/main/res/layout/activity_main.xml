@@ -41,12 +41,29 @@
             android:inputType="numberDecimal"
             android:layout_marginBottom="16dp"
             ></EditText>
+        <EditText
+            android:id="@+id/area_edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Área del panel solar (Metros Cuadrados)"
+            android:inputType="numberDecimal"
+            android:layout_marginBottom="16dp"
+            ></EditText>
 
+        <SeekBar
+            android:id="@+id/inclination_sb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="90"
+            android:min="0"
+            android:progress="30"
+            android:layout_marginBottom="16dp"
+            ></SeekBar>
         <TextView
             android:id="@+id/inclination_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Inclinación de los paneles"
+            android:text="Inclinación de los paneles: 30°"
             android:textSize="18sp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="16dp"
@@ -58,6 +75,13 @@
             android:text="Calcular Producción de Energía Solar"
             android:layout_gravity="center_horizontal"
             ></Button>
+        <TextView
+            android:id="@+id/result_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="35sp"
+            android:textAlignment="center"
+            android:layout_marginTop="32dp"></TextView>
     </LinearLayout>
 
 
