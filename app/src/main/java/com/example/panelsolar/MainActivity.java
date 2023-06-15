@@ -55,14 +55,23 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //Obtener valores de los campos
-                double latitudeValue= Double.parseDouble(latitude.getText().toString());
-                double longitudeValue= Double.parseDouble(longitude.getText().toString());
-                double areaValue= Double.parseDouble(area.getText().toString());
+                String lalitudeParameter= latitude.getText().toString();
+                String longitudeParameter= longitude.getText().toString();
+                String areaParameter= area.getText().toString();
+
+                if(lalitudeParameter.isEmpty() || longitudeParameter.isEmpty() || areaParameter.isEmpty()){
+                    result.setText("Ingrese todos los datos solicitados");
+                }else{
+                double latitudeValue= Double.parseDouble(lalitudeParameter);
+                double longitudeValue= Double.parseDouble(longitudeParameter);
+                double areaValue= Double.parseDouble(areaParameter);
+
                 int inclination= inclinationBar.getProgress();
                 //Calcular producción de energia y mostrar resultado
+
                 double energyGenerated= calculateEnergy(latitudeValue,longitudeValue,areaValue,inclination);
                 result.setText("La energía generada es de: "+energyGenerated+" kWh");
-            }
+            }}
         });
 
     }
